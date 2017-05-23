@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 # class member variables go here, for example:
-var lvel = Vector2(100, 100)
+var lvel = Vector2(300, 300)
 var acc = 5
 
-var avel = .5
+var avel = 5
 
 func _ready():
 	# Called every time the node is added to the scene.
