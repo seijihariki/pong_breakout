@@ -11,6 +11,7 @@ sort/enabled = true
 [node name="Ball" parent="." instance=ExtResource( 1 )]
 
 transform/pos = Vector2( 499.666, 303.501 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="TopWall" parent="." instance=ExtResource( 2 )]
 
@@ -22,16 +23,16 @@ transform/pos = Vector2( 512.354, -9.95326 )
 
 [node name="pallete" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 161.993, 297.329 )
-transform/scale = Vector2( 0.2, 0.2 )
-speed = -13
-player = 1
+transform/pos = Vector2( 15.7328, 303.977 )
+transform/scale = Vector2( 0.1, 0.1 )
+speed = -9
+player = 2
 
 [node name="pallete1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 912.493, 295.279 )
-transform/scale = Vector2( 0.2, 0.2 )
-speed = -13
-player = 2
+transform/pos = Vector2( 1005.54, 305.862 )
+transform/scale = Vector2( 0.1, 0.1 )
+speed = -9
+player = 1
 
 
