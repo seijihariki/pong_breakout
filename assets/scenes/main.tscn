@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://assets/scenes/ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/wall.tscn" type="PackedScene" id=2]
+
+[node name="YSort" type="YSort"]
+
+sort/enabled = true
+
+[node name="Ball" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 499.666, 303.501 )
+
+[node name="TopWall" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 511.679, 610.274 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 512.354, -9.95326 )
+
+
