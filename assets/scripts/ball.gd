@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # class member variables go here, for example:
-var lvel = Vector2(30, 30)
+var lvel = Vector2(50, 50)
 
 var avel = .5
 
@@ -14,8 +14,11 @@ func _ready():
 func _fixed_process(delta):
 	move(lvel*delta)
 	rotate(avel*delta)
-	if get_pos().y < 0:
-		
+	
+	# Collision handling
+	var normal = get_collision_normal()
+	if normal != Vector2(0, 0):
+		lvel -= 2*normal*normal.dot(lvel)
 		pass
 	
 	pass
