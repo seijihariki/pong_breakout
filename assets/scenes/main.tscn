@@ -20,17 +20,25 @@ transform/pos = Vector2( 520.556, -18.1554 )
 [node name="RigidBody2D 3" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 999.145, 326.856 )
-speed = 50000
+speed = 80000
 
 [node name="RigidBody2D4" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 47.3462, 333.504 )
-speed = 50000
+speed = 80000
 up_button = "ui_w"
 down_button = "ui_s"
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 303.601, 116.343 )
+
+[node name="RigidBody2D1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 700.83, 317.678 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 455.963, 368.012 )
 
 
