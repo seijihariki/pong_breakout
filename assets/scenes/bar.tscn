@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://assets/scripts/bar.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/pallete.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/blank.jpg" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -40,7 +40,7 @@ activate_button = "ui_accept"
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/rot = 90.0
-transform/scale = Vector2( 0.03, 0.03 )
+transform/scale = Vector2( 0.09, 0.035 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

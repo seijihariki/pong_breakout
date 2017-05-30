@@ -3,7 +3,7 @@ extends RigidBody2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-var acc = 50
+var acc = 300
 
 func _ready():
 	# Called every time the node is added to the scene.

@@ -10,13 +10,18 @@ export(String) var up_button = "ui_up"
 export(String) var down_button = "ui_down"
 export(String) var activate_button = "ui_accept"
 
+var init_x = 0
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	init_x = get_pos().x
 	set_process_input(true)
 	set_fixed_process(true)
 	pass
 
+
+var back_track_force = 5000
 var up = false
 var down = false
 var space = false
@@ -43,4 +48,5 @@ func _input(event):
 	pass
 
 func _fixed_process(delta):
+	set_applied_force(Vector2((init_x - get_pos().x)*back_track_force, 0))
 	pass
