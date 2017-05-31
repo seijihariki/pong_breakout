@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://assets/scenes/wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scenes/bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scenes/ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/goal.tscn" type="PackedScene" id=4]
 
 [node name="YSort" type="YSort"]
 
@@ -31,6 +32,37 @@ down_button = "ui_s"
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 303.601, 116.343 )
+transform/pos = Vector2( 506.208, 285.666 )
+
+[node name="Area2D" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1125.03, 312.941 )
+transform/scale = Vector2( 1, 11.1561 )
+p1_score = null
+p2_score = null
+player_side = null
+
+[node name="Area2D1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -80.8404, 305.756 )
+transform/scale = Vector2( 1, 11.1561 )
+p1_score = null
+p2_score = null
+player_side = null
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 364.0
+margin/top = 37.0
+margin/right = 664.0
+margin/bottom = 137.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
 
 
