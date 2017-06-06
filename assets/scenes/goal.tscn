@@ -18,8 +18,8 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-p1_score = null
-p2_score = null
+p1_score = 0
+p2_score = 0
 player_side = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -28,10 +28,6 @@ transform/scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
-script/script = ExtResource( 1 )
-p1_score = null
-p2_score = null
-player_side = null
 
 [connection signal="body_enter" from="." to="." method="_on_Area2D_body_enter"]
 
