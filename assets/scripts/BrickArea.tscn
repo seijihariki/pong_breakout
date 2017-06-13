@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://assets/scripts/BrickArea.gd" type="Script" id=1]
+
+[node name="YSort" type="YSort"]
+
+sort/enabled = true
+script/script = ExtResource( 1 )
+
+

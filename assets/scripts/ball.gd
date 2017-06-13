@@ -5,6 +5,8 @@ extends RigidBody2D
 # var b = "textvar"
 var acc = 300
 
+var brick = preload('res://assets/scripts/Brick.gd')
+
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -14,3 +16,14 @@ func _ready():
 
 func _fixed_process(delta):
 	set_applied_force(get_linear_velocity().normalized()*acc)
+	pass
+
+func _on_body_enter(body):
+	pass # replace with function body
+
+
+func _on_body_exit(body):
+	if body extends brick:
+		body.queue_free()
+		pass
+	pass # replace with function body
