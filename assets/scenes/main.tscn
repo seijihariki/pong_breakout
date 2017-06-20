@@ -2,11 +2,11 @@
 
 [ext_resource path="res://assets/scenes/wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scenes/bar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/scenes/ball.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/scenes/goal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/fonts/scoreFont.fnt" type="BitmapFont" id=5]
-[ext_resource path="res://assets/scripts/score.gd" type="Script" id=6]
-[ext_resource path="res://assets/scripts/BrickArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/scenes/goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/scoreFont.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://assets/scripts/score.gd" type="Script" id=5]
+[ext_resource path="res://assets/scripts/BrickArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/scenes/ball.tscn" type="PackedScene" id=7]
 
 [node name="YSort" type="YSort"]
 
@@ -21,35 +21,31 @@ transform/pos = Vector2( 520.556, 602.072 )
 
 transform/pos = Vector2( 520.556, -18.1554 )
 
-[node name="RigidBody2D 3" parent="." instance=ExtResource( 2 )]
+[node name="Right player" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 999.145, 326.856 )
 speed = 80000
 
-[node name="RigidBody2D4" parent="." instance=ExtResource( 2 )]
+[node name="Left player" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 47.3462, 333.504 )
 speed = 80000
 up_button = "ui_w"
 down_button = "ui_s"
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 506.208, 285.666 )
-
-[node name="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Right goal" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1125.03, 312.941 )
 transform/scale = Vector2( 1, 11.1561 )
 player_side = 1
 
-[node name="Area2D1" parent="." instance=ExtResource( 4 )]
+[node name="Left goal" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( -80.8404, 305.756 )
 transform/scale = Vector2( 1, 11.1561 )
 player_side = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Score text" type="RichTextLabel" parent="."]
 
 rect/min_size = Vector2( 30, 10 )
 focus/ignore_mouse = false
@@ -60,24 +56,28 @@ margin/left = 450.0
 margin/top = 50.0
 margin/right = 655.0
 margin/bottom = 160.0
-custom_fonts/normal_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode/enabled = true
 bbcode/bbcode = "1:0"
 visible_characters = 6
-script/script = ExtResource( 6 )
+script/script = ExtResource( 5 )
 
-[node name="RigidBody2D1" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 700.83, 317.678 )
-
-[node name="RigidBody2D2" parent="." instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 455.963, 368.012 )
-
-[node name="YSort" parent="." instance=ExtResource( 7 )]
+[node name="Bricks object" parent="." instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 100.995, 94.8432 )
 transform/scale = Vector2( 0.952111, 0.952111 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 506.208, 285.666 )
+
+[node name="RigidBody2D1" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 700.83, 317.678 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 455.963, 368.012 )
 
 
