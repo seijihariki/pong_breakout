@@ -11,6 +11,7 @@ var bar = preload('res://assets/scripts/bar.gd')
 var powerup = preload('res://assets/scenes/powerup.tscn')
 
 func _ready():
+	randomize()
 	# Called every time the node is added to the scene.
 	# Initialization here
 	if Globals.get("ball_cnt") == null:
@@ -34,13 +35,16 @@ func _on_body_enter(body):
 func _on_body_exit(body):
 	if body extends brick:
 		var pos = body._get_global_pos()
-		var pu = powerup.instance()
-		pu._set_global_pos(pos)
-		get_parent().add_child(pu)
-		if player == 1:
-			pu.set_left()
-		else:
-			pu.set_right()
+		if player != 0 and rand_range(0, 100) < 50:
+			var pu = powerup.instance()
+			pu._set_global_pos(pos)
+			get_parent().add_child(pu)
+			
+			if player == 1:
+				pu.set_left()
+			elif player == 2:
+				pu.set_right()
+
 		body.queue_free()
 		pass
 	

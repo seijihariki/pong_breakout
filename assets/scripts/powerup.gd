@@ -4,6 +4,9 @@ extends Area2D
 # var a = 2
 # var b = "textvar"
 
+var goal = preload('res://assets/scenes/goal.gd')
+var bar = preload('res://assets/scripts/bar.gd')
+
 var type = 0
 var types = 5
 
@@ -30,5 +33,15 @@ func _fixed_process(delta):
 	set_pos(get_pos() + vel*delta)
 	pass
 
-func _on_Area2D_area_exit( area ):
-	pass # replace with function body
+func _on_area_enter( area ):
+	pass
+
+
+func _on_body_enter( body ):
+	print ("Entered area")
+	if body extends goal:
+		print ("Collided goal")
+		
+	if body extends bar:
+		print ("Collided bar")
+	pass
