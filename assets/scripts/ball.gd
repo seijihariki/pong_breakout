@@ -32,6 +32,14 @@ func _on_body_enter(body):
 	pass # replace with function body
 
 func _on_body_exit(body):
+	var sound = randi()*3
+	if sound == 0:
+		get_node("../SamplePlayer").play("hit5")
+	elif sound == 1:
+		get_node("../SamplePlayer").play("hit4")
+	elif sound == 2:
+		get_node("../SamplePlayer").play("hit3")
+	
 	if body extends brick:
 		var pos = body._get_global_pos()
 		var pu = powerup.instance()
