@@ -27,7 +27,7 @@ transform/pos = Vector2( 520.556, -18.1554 )
 
 transform/pos = Vector2( 999.145, 326.856 )
 speed = 80000
-player = -1
+player = 2
 
 [node name="Left player" parent="." instance=ExtResource( 3 )]
 
@@ -35,7 +35,7 @@ transform/pos = Vector2( 47.3462, 333.504 )
 speed = 80000
 up_button = "ui_w"
 down_button = "ui_s"
-player = -1
+player = 1
 
 [node name="Right goal" parent="." instance=ExtResource( 4 )]
 
