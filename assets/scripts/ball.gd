@@ -4,8 +4,11 @@ extends RigidBody2D
 # var a = 2
 # var b = "textvar"
 var acc = 300
+var player = 0
 
 var brick = preload('res://assets/scripts/Brick.gd')
+var bar = preload('res://assets/scripts/bar.gd')
+var powerup = preload('res://assets/scenes/powerup.tscn')
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -28,9 +31,19 @@ func _fixed_process(delta):
 func _on_body_enter(body):
 	pass # replace with function body
 
-
 func _on_body_exit(body):
 	if body extends brick:
+		var pos = body._get_global_pos()
+		var pu = powerup.instance()
+		pu._set_global_pos(pos)
+		get_parent().add_child(pu)
+		if player == 1:
+			pu.set_left()
+		else:
+			pu.set_right()
 		body.queue_free()
 		pass
+	
+	if body extends bar:
+		player = body.get_player()
 	pass # replace with function body

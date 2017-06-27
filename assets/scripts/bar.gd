@@ -9,6 +9,7 @@ export(int) var speed = 500000
 export(String) var up_button = "ui_up"
 export(String) var down_button = "ui_down"
 export(String) var activate_button = "ui_accept"
+export(int) var player = -1
 
 var init_x = 0
 
@@ -25,6 +26,9 @@ var back_track_force = 5000
 var up = false
 var down = false
 var space = false
+
+func get_player():
+	return player
 
 func _input(event):	
 	if event.is_action_pressed(up_button):

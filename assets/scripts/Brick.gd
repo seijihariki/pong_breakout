@@ -17,3 +17,6 @@ func set_color(color):
 		pass
 	sprite.set_modulate(color)
 	pass
+	
+func _get_global_pos():
+	return get_global_pos()
