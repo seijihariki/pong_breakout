@@ -15,7 +15,7 @@ func _ready():
 	# Init buttons
 	if Globals.get("game_over_text") == null:
 		Globals.set("game_over_text", "PONG BREAKOUT")
-	get_node("Winner").set_text(Globals.get("game_over_text"))
+	get_node("Pivot/Winner").set_text(Globals.get("game_over_text"))
 	get_node("New Game").set_text("New Game")
 	get_node("New Game").set_down(get_node("Quit"))
 	get_node("New Game").select()
@@ -32,9 +32,9 @@ var time = 0
 
 func _fixed_process(delta):
 	time += delta
-	get_node("Winner").set_rotation(sin(time)*0.261)
+	get_node("Pivot").set_rot(sin(time)*0.261)
 	var scl = sin(1.7*time*2*PI)*.1 + 1
-	get_node("Winner").set_scale(Vector2(scl, scl))
+	get_node("Pivot").set_scale(Vector2(scl, scl))
 
 func find_selected():
 	for button in buttons:

@@ -64,18 +64,15 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Pivot" type="KinematicBody2D" parent="."]
 
 transform/pos = Vector2( 500, 100 )
 input/pickable = false
 collision/layers = 1
 collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+collision/margin = 0.08
 
-[node name="Winner" type="RichTextLabel" parent="StaticBody2D"]
+[node name="Winner" type="RichTextLabel" parent="Pivot"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
