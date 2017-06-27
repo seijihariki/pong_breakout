@@ -1,45 +1,47 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
-[ext_resource path="res://assets/scenes/wall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/scenes/bar.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/scenes/goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/fonts/scoreFont.fnt" type="BitmapFont" id=4]
-[ext_resource path="res://assets/scripts/score.gd" type="Script" id=5]
-[ext_resource path="res://assets/scripts/BrickArea.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/scenes/ball.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://assets/scenes/wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/scenes/bar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/scoreFont.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://assets/scripts/score.gd" type="Script" id=6]
+[ext_resource path="res://assets/scripts/BrickArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/scenes/ball.tscn" type="PackedScene" id=8]
 
 [node name="YSort" type="YSort"]
 
 transform/pos = Vector2( -10.883, 8.16229 )
 sort/enabled = true
+script/script = ExtResource( 1 )
 
-[node name="BottomWall" parent="." instance=ExtResource( 1 )]
+[node name="BottomWall" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 520.556, 602.072 )
 
-[node name="Top Wall" parent="." instance=ExtResource( 1 )]
+[node name="Top Wall" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 520.556, -18.1554 )
 
-[node name="Right player" parent="." instance=ExtResource( 2 )]
+[node name="Right player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 999.145, 326.856 )
 speed = 80000
 
-[node name="Left player" parent="." instance=ExtResource( 2 )]
+[node name="Left player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 47.3462, 333.504 )
 speed = 80000
 up_button = "ui_w"
 down_button = "ui_s"
 
-[node name="Right goal" parent="." instance=ExtResource( 3 )]
+[node name="Right goal" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1125.03, 312.941 )
 transform/scale = Vector2( 1, 11.1561 )
 player_side = 1
 
-[node name="Left goal" parent="." instance=ExtResource( 3 )]
+[node name="Left goal" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( -80.8404, 305.756 )
 transform/scale = Vector2( 1, 11.1561 )
@@ -56,28 +58,35 @@ margin/left = 450.0
 margin/top = 50.0
 margin/right = 655.0
 margin/bottom = 160.0
-custom_fonts/normal_font = ExtResource( 4 )
+custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode/enabled = true
 bbcode/bbcode = "1:0"
 visible_characters = 6
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
-[node name="Bricks object" parent="." instance=ExtResource( 6 )]
+[node name="Bricks object 2" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 100.995, 94.8432 )
+transform/pos = Vector2( 82.5401, 87.6915 )
 transform/scale = Vector2( 0.952111, 0.952111 )
+brk_max_vel = 200
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 7 )]
+[node name="Bricks object" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 506.208, 285.666 )
+transform/pos = Vector2( 359.364, 93.8432 )
+transform/scale = Vector2( 0.952111, 0.952111 )
+brk_max_vel = -200
 
-[node name="RigidBody2D1" parent="." instance=ExtResource( 7 )]
+[node name="RigidBody2D" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 700.83, 317.678 )
+transform/pos = Vector2( 536.966, 295.919 )
 
-[node name="RigidBody2D2" parent="." instance=ExtResource( 7 )]
+[node name="RigidBody2D1" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 455.963, 368.012 )
+transform/pos = Vector2( 532.685, 219.252 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 531.833, 368.012 )
 
 

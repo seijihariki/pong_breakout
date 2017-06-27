@@ -9,17 +9,15 @@ func _ready():
 	# Initialization here
 	pass
 
-export(int) var p1_score = 0
-export(int) var p2_score = 0
+var score = 0
 export(int) var player_side
 
 func _on_Area2D_body_enter( body ):
 	if (body extends ball):
-		if (player_side == 1):
-			p2_score = p2_score + 1
-		else:
-			p1_score = p1_score + 1
-			 # replace with function body
+		score = score + 1
+		Globals.set("ball_cnt", Globals.get("ball_cnt") - 1)
+		print("Ball deleted. Now ", Globals.get("ball_cnt"), " ball(s) in game")
+		# replace with function body
 
 func get_score():
-	return Vector2(p1_score, p2_score)
+	return score

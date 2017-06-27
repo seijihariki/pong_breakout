@@ -11,4 +11,15 @@ func _ready():
 	pass
 
 func _fixed_process(delta):
-	set_bbcode(str(get_node("../Area2D1").get_score()[0]) + ":" +  str(get_node("../Area2D").get_score()[1]))
+	var l_score = get_node("../Right goal").get_score()
+	var r_score = get_node("../Left goal").get_score()
+	if l_score > r_score:
+		set_bbcode("[color=green]" + str(l_score) + "[/color]:[color=red]" +  str(r_score) + "[/color]")
+		Globals.set("game_over_text", "Player 2 [color=red]DEFEATED[/color]")
+	elif r_score > r_score:
+		set_bbcode("[color=red]" + str(l_score) + "[/color]:[color=green]" +  str(r_score) + "[/color]")
+		Globals.set("game_over_text", "Player 1 [color=red]DEFEATED[/color]")
+	else:
+		set_bbcode(str(l_score) + ":" +  str(r_score))
+		Globals.set("game_over_text", "Both players [color=red]DEFEATED[/color]")
+		pass

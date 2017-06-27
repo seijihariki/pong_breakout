@@ -10,6 +10,13 @@ var brick = preload('res://assets/scripts/Brick.gd')
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	if Globals.get("ball_cnt") == null:
+		print("ball_cnt unset. Creating...")
+		Globals.set("ball_cnt", 0)
+		pass
+	Globals.set("ball_cnt", Globals.get("ball_cnt") + 1)
+	
+	print("Ball created. Now ", Globals.get("ball_cnt"), " ball(s) in game")
 	set_linear_velocity(Vector2(randi()%1000 - 500, randi()%1000 - 500))
 	set_fixed_process(true)
 	pass
