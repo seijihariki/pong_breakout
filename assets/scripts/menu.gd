@@ -25,7 +25,16 @@ func _ready():
 	buttons = [get_node("New Game"), get_node("Quit")]
 	
 	set_process_input(true)
+	set_fixed_process(true)
 	pass
+
+var time = 0
+
+func _fixed_process(delta):
+	time += delta
+	get_node("Winner").set_rotation(sin(time)*0.261)
+	var scl = sin(1.7*time*2*PI)*.1 + 1
+	get_node("Winner").set_scale(Vector2(scl, scl))
 
 func find_selected():
 	for button in buttons:
