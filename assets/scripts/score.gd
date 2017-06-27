@@ -16,7 +16,7 @@ func _fixed_process(delta):
 	if l_score > r_score:
 		set_bbcode("[color=green]" + str(l_score) + "[/color]:[color=red]" +  str(r_score) + "[/color]")
 		Globals.set("game_over_text", "Player 2 [color=red]DEFEATED[/color]")
-	elif r_score > r_score:
+	elif l_score < r_score:
 		set_bbcode("[color=red]" + str(l_score) + "[/color]:[color=green]" +  str(r_score) + "[/color]")
 		Globals.set("game_over_text", "Player 1 [color=red]DEFEATED[/color]")
 	else:
