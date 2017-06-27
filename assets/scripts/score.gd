@@ -1,3 +1,4 @@
+
 extends RichTextLabel
 
 # class member variables go here, for example:
