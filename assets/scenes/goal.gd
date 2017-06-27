@@ -17,6 +17,7 @@ func _on_Area2D_body_enter( body ):
 		score = score + 1
 		Globals.set("ball_cnt", Globals.get("ball_cnt") - 1)
 		print("Ball deleted. Now ", Globals.get("ball_cnt"), " ball(s) in game")
+		body.queue_free()
 		# replace with function body
 
 func get_score():

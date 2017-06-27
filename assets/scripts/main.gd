@@ -13,7 +13,7 @@ func _ready():
 var time = 0
 
 func _fixed_process(delta):
-	if Globals.get("ball_cnt") == 0:
+	if Globals.get("ball_cnt") <= 0:
 		time += delta
 		if time > .5:
 			get_tree().change_scene("res://assets/scenes/menu.tscn")
