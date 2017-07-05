@@ -4,6 +4,7 @@ extends Area2D
 # var a = 2
 # var b = "textvar"
 var ball = preload('res://assets/scripts/ball.gd')
+var powerup = preload('res://assets/scripts/powerup.gd')
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -19,6 +20,9 @@ func _on_Area2D_body_enter( body ):
 		print("Ball deleted. Now ", Globals.get("ball_cnt"), " ball(s) in game")
 		body.queue_free()
 		# replace with function body
+	
+	if (body extends powerup):
+		print ("Collided goal")
 
 func get_score():
 	return score

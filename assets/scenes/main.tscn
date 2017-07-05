@@ -70,11 +70,13 @@ script/script = ExtResource( 1 )
 
 [node name="BottomWall" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 520.556, 602.072 )
+transform/pos = Vector2( 524.657, 621.656 )
+transform/scale = Vector2( 16.0009, 3.14343 )
 
 [node name="Top Wall" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 520.556, -18.1554 )
+transform/pos = Vector2( 520.556, -38.076 )
+transform/scale = Vector2( 16.0009, 2.90411 )
 
 [node name="Right player" parent="." instance=ExtResource( 3 )]
 
@@ -92,14 +94,14 @@ player = 1
 
 [node name="Right goal" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1125.03, 312.941 )
-transform/scale = Vector2( 1, 11.1561 )
+transform/pos = Vector2( 1099.84, 312.941 )
+transform/scale = Vector2( 1.78712, 11.1561 )
 player_side = 1
 
 [node name="Left goal" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -80.8404, 305.756 )
-transform/scale = Vector2( 1, 11.1561 )
+transform/pos = Vector2( -58.8178, 305.756 )
+transform/scale = Vector2( 1.68821, 11.1561 )
 player_side = 0
 
 [node name="Score text" type="RichTextLabel" parent="."]
@@ -138,7 +140,7 @@ transform/pos = Vector2( 536.966, 295.919 )
 
 [node name="RigidBody2D1" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 532.685, 219.252 )
+transform/pos = Vector2( 579.55, 338.691 )
 
 [node name="RigidBody2D2" parent="." instance=ExtResource( 8 )]
 
@@ -148,7 +150,7 @@ transform/pos = Vector2( 531.833, 368.012 )
 
 config/polyphony = 11
 config/samples = SubResource( 1 )
-default/volume_db = 0.0
+default/volume_db = -15.0
 default/pitch_scale = 1.0
 default/pan = 0.0
 default/depth = 0.0

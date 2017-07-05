@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 # class member variables go here, for example:
 # var a = 2
@@ -34,14 +34,4 @@ func _fixed_process(delta):
 	pass
 
 func _on_area_enter( area ):
-	pass
-
-
-func _on_body_enter( body ):
-	print ("Entered area")
-	if body extends goal:
-		print ("Collided goal")
-		
-	if body extends bar:
-		print ("Collided bar")
 	pass
