@@ -14,7 +14,7 @@ func _ready():
 	# Initialization here
 	# Init buttons
 	if Globals.get("game_over_text") == null:
-		Globals.set("game_over_text", "PONG BREAKOUT")
+		Globals.set("game_over_text", "[center]PONG BREAKOUT[/center]")
 	get_node("Pivot/Winner").set_text(Globals.get("game_over_text"))
 	get_node("New Game").set_text("New Game")
 	get_node("New Game").set_down(get_node("Quit"))

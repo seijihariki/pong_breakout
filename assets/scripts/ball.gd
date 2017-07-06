@@ -6,6 +6,8 @@ extends RigidBody2D
 var acc = 300
 var player = 0
 
+var color = [Color(0, 255, 0), Color(255, 0, 0), Color(0, 0, 255)]
+
 var brick = preload('res://assets/scripts/Brick.gd')
 var bar = preload('res://assets/scripts/bar.gd')
 var powerup = preload('res://assets/scenes/powerup.tscn')
@@ -46,6 +48,9 @@ func _on_body_exit(body):
 		if player != 0 and rand_range(0, 100) < 50:
 			var pu = powerup.instance()
 			pu._set_global_pos(pos)
+			var tp = randi()%color.size()
+			pu.setColor(color[tp])
+			pu.setType(tp)
 			get_parent().add_child(pu)
 			
 			if player == 1:

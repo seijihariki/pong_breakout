@@ -96,6 +96,8 @@ player = 1
 
 transform/pos = Vector2( 1099.84, 312.941 )
 transform/scale = Vector2( 1.78712, 11.1561 )
+collision/layers = 3
+collision/mask = 3
 player_side = 1
 
 [node name="Left goal" parent="." instance=ExtResource( 4 )]
@@ -111,14 +113,14 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 450.0
+margin/left = 280.0
 margin/top = 50.0
-margin/right = 655.0
+margin/right = 821.0
 margin/bottom = 160.0
 custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode/enabled = true
-bbcode/bbcode = "1:0"
+bbcode/bbcode = "[center]1:0[/center]"
 visible_characters = 6
 script/script = ExtResource( 6 )
 

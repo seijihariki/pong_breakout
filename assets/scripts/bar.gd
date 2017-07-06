@@ -11,6 +11,8 @@ export(String) var down_button = "ui_down"
 export(String) var activate_button = "ui_accept"
 export(int) var player = -1
 
+var powerup = preload('res://assets/scripts/powerup.gd')
+
 var init_x = 0
 
 func _ready():
@@ -54,3 +56,12 @@ func _input(event):
 func _fixed_process(delta):
 	set_applied_force(Vector2((init_x - get_pos().x)*back_track_force, 0))
 	pass
+
+func _on_RigidBody2D_body_enter( body ):
+	if body extends powerup:
+		var ratio = body.execute(player, self)
+		get_node("Sprite").scale(ratio)
+		get_node("CollisionShape2D").scale(ratio)
+		body.queue_free()
+		pass
+	pass # replace with function body
